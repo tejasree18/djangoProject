@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content_body %}
+    <br>
+    <h3 style="margin-bottom: 30px">Welcome to Crypto Me!</h3>
+    <p style="text-align: center; color: black; margin-top: 20px;  font-size: 18px !important; padding: 25px; padding-top: 0px !important; padding-bottom: 5px !important;">
+        You can encrypt your data, and get the result from below. You can also send the encrypted data through mail from
+        the same portal. </p>
+    <h4 style="margin-bottom: 30px !important">Choose any of the cipher options given below :</h4>
+    <a class="btn btn-primary mb-2 btn-lg d-grid gap-2 col-6 mx-auto" href="{% url 'caesar_ci' %}" role="button">Caesar
+        Cipher</a><br>
+    <a class="btn btn-primary mb-2 btn-lg d-grid gap-2 col-6 mx-auto" href="{% url 'playfair_ci' %}" role="button">Play
+        Fair Cipher</a><br>
+    <a class="btn btn-primary mb-2 btn-lg d-grid gap-2 col-6 mx-auto" href="{% url 'transposition_ci' %}" role="button">Transposition
+        Cipher</a><br>
+    <a class="btn btn-primary mb-2 btn-lg d-grid gap-2 col-6 mx-auto" href="{% url 'sendmail' %}" role="button">Send
+        Email</a><br>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title_name %} Transposition Cipher {% endblock %}
+
+{% block content_body %}
+    <h3 style="text-align: center; color: navy; margin-top: 50px">Transposition Cipher</h3>
+    <p style="text-align: center; color: black; margin-top: 20px;  font-size: 18px !important; padding: 30px; padding-top: 0px !important; padding-bottom: 0px !important;">
+        In cryptography, the TRANSPOSITION cipher is a method of encryption where the
+        positions of plaintext are shifted a certain number(determined by the key) that
+        follows a regular system that results in the permuted text, known as the encrypted
+        text. The type of transposition cipher demonstrated under is the ROUTE cipher.</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-4">
+            <input type="text" class="form-control" placeholder="Enter Data to Encrypt Here" name="q" required
+                   autocomplete="off">
+        </div>
+        <div class="mb-5">
+            <input type="number" class="form-control" name="key"
+                   placeholder="Enter Key (2 to less than the length of message)" autocomplete="off" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Submit</button>
+    </form>
+    {% if res %}
+        <div class="alert alert-success alert-dismissible fade show col-lg" role="alert">
+            <strong>Your data is Successfully encrypted!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <p>Your encrypted data is {{ res }}</p>
+    {% endif %}
+
+{% endblock %}

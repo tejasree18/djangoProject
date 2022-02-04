@@ -1,0 +1,26 @@
+.container {
+    margin-top: 100px !important;
+}
+
+.adjustCenter {
+    width: 550px;
+    height: 600px;
+    position: absolute;
+    padding-top: 2px;
+    top: 50%;
+    left: 50%;
+    background: hsl(0, 1%, 78%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 6px rgb(0, 0, 0), 0 1px 4px rgb(0, 0, 0);
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif !important;
+    font-style: oblique;
+    word-spacing: 10px;
+    margin-bottom: 50px;
+}

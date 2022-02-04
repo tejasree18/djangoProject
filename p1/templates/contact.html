@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title_name %} Contact Us {% endblock %}
+
+{% block content_body %}
+    <h3 style="text-align: center; color: navy; margin-top: 50px; margin-bottom: 20px !important;">Contact Us</h3>
+    <p>Have suggestions or queries? Finding how to reach us? We have heard you!</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-4">
+            <input type="text" class="form-control" placeholder="Enter Your Name" name="message" autocomplete="off"
+                   required>
+        </div>
+        <div class="mb-4">
+            <input type="text" class="form-control" name="from_email" placeholder="Enter Your Email Address"
+                   autocomplete="off" required>
+        </div>
+        <div class="mb-4">
+            <input type="password" class="form-control" name="passw" placeholder="Enter Your Password"
+                   autocomplete="off" required>
+        </div>
+        <div class="mb-4">
+            <textarea type="text" class="form-control" placeholder="Enter your suggestions or queries" name="sub"
+                      rows="3" autocomplete="off"></textarea>
+        </div>
+        <div class="form-check mb-5">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Check me Out!
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% if res %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ res }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+{% endblock %}
